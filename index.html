@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Javier & Alicia · La gran fiesta de boda</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap">
+<style>
+:root{
+  --bk:#0e0b0c;--ox:#5a0f1e;--gd:#d8b45c;--gl:#f3dc92;--iv:#f6ecd6;--dim:#bfb49a;
+  color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--iv);font:300 17px/1.65 'Josefin Sans',system-ui,sans-serif;text-align:center;
+  background:radial-gradient(circle at 50% 100%,transparent 0 16px,rgba(216,180,92,.13) 17px 18px,transparent 19px) 0 0/36px 18px,radial-gradient(circle at 0 100%,transparent 0 16px,rgba(216,180,92,.13) 17px 18px,transparent 19px) 18px 9px/36px 18px,var(--bk)}
+.ltd{font-family:'Limelight',Georgia,serif;font-weight:400}
+.gold{color:var(--gd);background:linear-gradient(180deg,var(--gl),var(--gd) 55%,#9c7a2e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec{max-width:600px;margin:0 auto;padding:68px 22px}
+h2{font:400 clamp(30px,8.5vw,40px)/1.1 'Limelight',serif;margin:0 0 6px}
+.tiny{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--gd)}
+.div{display:block;width:190px;height:24px;margin:18px auto;fill:none;stroke:var(--gd);stroke-width:1.3;stroke-linecap:round}
+.arch{display:block;width:170px;height:102px;margin:0 auto;fill:none;stroke:var(--gd);stroke-width:1.2}
+
+/* Portada */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 0 22px;background:radial-gradient(ellipse at 50% 100%,rgba(90,15,30,.8),transparent 70%)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from -90deg at 50% 100%,rgba(216,180,92,.32) 0 1.5deg,transparent 1.5deg 7.5deg);-webkit-mask:radial-gradient(ellipse at 50% 100%,#000,transparent 72%);mask:radial-gradient(ellipse at 50% 100%,#000,transparent 72%)}
+.hero>*{position:relative}
+.bulbs{position:relative;height:18px;margin:0 14px;background:radial-gradient(circle,rgba(243,220,146,.45) 0 3px,transparent 3.5px) 0 50%/18px 18px repeat-x}
+.bulbs::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,var(--gl) 0 3.2px,transparent 3.7px) 9px 50%/18px 18px repeat-x;filter:drop-shadow(0 0 3px var(--gd))}
+@media (prefers-reduced-motion:no-preference){.bulbs::after{animation:chase 1.4s steps(1) infinite}@keyframes chase{50%{opacity:0}}}
+.frame{margin:0 14px;padding:42px 18px 34px;border:1px solid var(--gd);border-top:0;border-bottom:0;background:rgba(14,11,12,.55)}
+.names{font-size:clamp(54px,17vw,92px);line-height:.98;margin:12px 0 6px}
+.names i{display:block;font-size:.42em;font-style:normal;margin:4px 0}
+.date{font:400 clamp(20px,5.6vw,26px)/1.3 'Limelight',serif;letter-spacing:.08em;margin:6px 0 0}
+
+/* Entradas */
+.ticket{display:flex;margin:30px 0 0;background:var(--gd);color:var(--bk);text-align:left;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5));
+  -webkit-mask:radial-gradient(circle 12px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;
+  mask:radial-gradient(circle 12px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat}
+.tk{flex:1;padding:24px 22px;border:1px solid var(--bk);border-right:0;margin:6px 0 6px 6px}
+.tk .tiny{color:var(--bk)}
+.tk .time{font:400 52px/1 'Limelight',serif;margin:4px 0}
+.tk b{display:block;font-size:20px;font-weight:600}
+.tk a{display:inline-block;margin-top:10px;color:var(--bk);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--bk);text-decoration:none}
+.stub{width:64px;border-left:2px dashed var(--bk);margin:6px 6px 6px 0;border:1px solid var(--bk);border-left:2px dashed var(--bk);display:flex;align-items:center;justify-content:center}
+.stub span{writing-mode:vertical-rl;transform:rotate(180deg);font:400 15px 'Limelight',serif;letter-spacing:.3em}
+
+.count{display:flex;justify-content:center;gap:10px;margin:22px 0 0}
+.count div{flex:1;max-width:96px;border:1px solid var(--gd);padding:10px 0 6px}
+.count b{display:block;font:400 clamp(32px,10vw,44px)/1 'Limelight',serif}
+.count small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+
+/* Programa */
+.show{list-style:none;margin:26px 0 0;padding:0;text-align:left}
+.show li{display:flex;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(216,180,92,.35)}
+.show .h{flex:0 0 78px;font:400 22px/1 'Limelight',serif;color:var(--gd)}
+.show b{font-weight:600;font-size:18px;display:block}
+.show small{color:var(--dim);font-size:15px}
+
+.grid{display:grid;gap:16px;margin-top:26px;text-align:left}
+@media(min-width:520px){.grid{grid-template-columns:1fr 1fr}}
+.box{border:1px solid var(--gd);padding:20px;position:relative}
+.box::before{content:"";position:absolute;inset:4px;border:1px solid rgba(216,180,92,.35);pointer-events:none}
+.box h3{font:400 20px/1.2 'Limelight',serif;margin:0 0 6px;color:var(--gd)}
+.box p{margin:0;font-size:15.5px;line-height:1.5}
+.sw{display:flex;gap:8px;justify-content:center;margin:20px 0 0}
+.sw i{width:34px;height:34px;border-radius:50%;border:1px solid var(--gd)}
+.rules{list-style:none;margin:24px 0 0;padding:0;text-align:left}
+.rules li{position:relative;padding:8px 0 8px 30px}
+.rules li::before{content:"";position:absolute;left:4px;top:17px;width:9px;height:9px;background:var(--gd);transform:rotate(45deg)}
+
+.wine{background:linear-gradient(var(--ox),#3a0a14)}
+.wine .sec{max-width:600px}
+details{border-top:1px solid rgba(216,180,92,.4);padding:14px 0;text-align:left}
+details:last-of-type{border-bottom:1px solid rgba(216,180,92,.4)}
+summary{cursor:pointer;font-weight:600;font-size:18px}
+details p{margin:8px 0 0;font-size:16px;color:var(--dim)}
+
+.fld{display:block;text-align:left;margin-top:20px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gd)}
+input,select,textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;font:300 17px 'Josefin Sans',sans-serif;color:var(--iv);background:rgba(246,236,214,.06);border:1px solid var(--gd);border-radius:0}
+input:focus,select:focus,textarea:focus,summary:focus-visible,.btn:focus-visible{outline:2px solid var(--gl);outline-offset:3px}
+select option{color:#111}
+.btn{display:inline-block;margin-top:28px;padding:15px 34px;background:linear-gradient(180deg,var(--gl),var(--gd));color:var(--bk);border:0;font:400 17px 'Limelight',serif;letter-spacing:.1em;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.ok{display:none;margin-top:16px;color:var(--gl);font-size:20px}
+.tower{display:block;width:150px;height:135px;margin:0 auto 10px;fill:none;stroke:var(--gd);stroke-width:1.4;stroke-linecap:round}
+footer{padding:20px 22px 60px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="s-div" viewBox="0 0 190 24"><path d="M0 12h66M124 12h66M95 2l10 10-10 10-10-10ZM77 6v12M113 6v12M70 12l-3-3v6Z"/></symbol>
+  <symbol id="s-arch" viewBox="0 0 170 102"><path d="M10 102V54a75 52 0 0 1 150 0v48M26 102V58a59 42 0 0 1 118 0v44M42 102V62a43 32 0 0 1 86 0v40M58 102V66a27 22 0 0 1 54 0v36M85 102V16M85 102L58 22M85 102L112 22M85 102L36 34M85 102L134 34"/><circle cx="85" cy="9" r="3"/></symbol>
+  <symbol id="s-tower" viewBox="0 0 140 126">
+    <path d="M54 10h32c0 10-8 15-16 15s-16-5-16-15ZM70 25v13M60 39h20M29 52h32c0 10-8 15-16 15s-16-5-16-15ZM45 67v13M35 81h20M79 52h32c0 10-8 15-16 15s-16-5-16-15ZM95 67v13M85 81h20M4 94h32c0 10-8 15-16 15s-16-5-16-15ZM20 109v13M10 123h20M54 94h32c0 10-8 15-16 15s-16-5-16-15ZM70 109v13M60 123h20M104 94h32c0 10-8 15-16 15s-16-5-16-15ZM120 109v13M110 123h20"/>
+    <circle cx="58" cy="4" r="1"/><circle cx="82" cy="3" r="1"/><circle cx="36" cy="44" r="1"/><circle cx="106" cy="45" r="1"/><circle cx="12" cy="86" r="1"/><circle cx="128" cy="87" r="1"/>
+  </symbol>
+</svg>
+
+<header class="hero">
+  <div class="bulbs" aria-hidden="true"></div>
+  <div class="frame">
+    <svg class="arch" aria-hidden="true"><use href="#s-arch"/></svg>
+    <p class="tiny" style="margin:18px 0 0">Una noche para recordar</p>
+    <h1 class="ltd gold names">Javier<i>&</i>Alicia</h1>
+    <svg class="div" aria-hidden="true"><use href="#s-div"/></svg>
+    <p style="margin:0;font-style:italic">os invitan a su gran fiesta de boda</p>
+    <p class="date gold" style="margin-top:16px">Sábado 4 · IX · 2027</p>
+    <p class="tiny" style="margin:6px 0 0">Cuenca</p>
+  </div>
+  <div class="bulbs" aria-hidden="true"></div>
+</header>
+
+<section class="sec" id="cuenta">
+  <p class="tiny" style="margin:0">Se levanta el telón en</p>
+  <div class="count">
+    <div><b class="gold" id="d">–</b><small>días</small></div><div><b class="gold" id="h">–</b><small>horas</small></div><div><b class="gold" id="m">–</b><small>min</small></div><div><b class="gold" id="s">–</b><small>seg</small></div>
+  </div>
+</section>
+
+<section class="sec" id="entradas" style="padding-top:20px">
+  <h2 class="gold">Vuestras entradas</h2>
+  <p style="margin:0;font-style:italic">Dos funciones, un mismo día</p>
+  <div class="ticket">
+    <div class="tk"><span class="tiny">Primera función · Ceremonia</span><div class="time">12:00</div><b>Iglesia de San Pedro</b>Cuenca<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+San+Pedro+Cuenca">Cómo llegar</a></div>
+    <div class="stub"><span>Admit one</span></div>
+  </div>
+  <div class="ticket">
+    <div class="tk"><span class="tiny">Gran gala · Copa y banquete</span><div class="time">13:30</div><b>Parador de Cuenca</b>Cuenca<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parador+de+Cuenca">Cómo llegar</a></div>
+    <div class="stub"><span>Admit one</span></div>
+  </div>
+</section>
+
+<section class="wine" id="programa">
+  <div class="sec">
+    <svg class="div" aria-hidden="true"><use href="#s-div"/></svg>
+    <h2 class="gold">El programa del día</h2>
+    <p style="margin:0;font-style:italic">Que no pare la música · Horarios aproximados</p>
+    <ul class="show">
+      <li><span class="h">11:45</span><div><b>Llegada de invitados</b><small>Rogamos estar en la iglesia de San Pedro hacia esa hora</small></div></li>
+      <li><span class="h">12:00</span><div><b>La ceremonia</b><small>Iglesia de San Pedro</small></div></li>
+      <li><span class="h">Luego</span><div><b>Fotos con los invitados</b><small>Al terminar la ceremonia, y paseo hasta el Parador</small></div></li>
+      <li><span class="h">13:30</span><div><b>Copa de bienvenida</b><small>Hora aproximada · Primer brindis del día</small></div></li>
+      <li><span class="h">Luego</span><div><b>El banquete</b><small>Parador de Cuenca · Hora por confirmar</small></div></li>
+      <li><span class="h">Luego</span><div><b>Sobremesa y pista de baile</b><small>Hasta que el cuerpo aguante</small></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="vestimenta">
+  <h2 class="gold">Código de vestimenta</h2>
+  <p style="margin:0;font-style:italic">Gran gala de los años 20</p>
+  <p style="margin:18px 0 0">Lentejuelas, flecos, perlas y plumas son bienvenidos, igual que el esmoquin, los tirantes y el sombrero de ala. Venid como si Hollywood os hubiera invitado.</p>
+  <div class="sw" aria-hidden="true"><i style="background:#0e0b0c"></i><i style="background:#5a0f1e"></i><i style="background:#d8b45c"></i></div>
+  <p class="tiny" style="margin:12px 0 0">Negro · Burdeos · Oro</p>
+  <svg class="div" aria-hidden="true" style="margin-top:36px"><use href="#s-div"/></svg>
+  <h2 class="gold" style="font-size:30px">Reglas de la casa</h2>
+  <ul class="rules">
+    <li>Brindar con champán es obligatorio.</li>
+    <li>Está prohibido irse pronto de la pista.</li>
+    <li>Los zapatos cómodos son un lujo bien visto: Cuenca tiene cuestas.</li>
+    <li>Lo que pase en la sobremesa, se queda en la sobremesa.</li>
+  </ul>
+</section>
+
+<section class="wine" id="info">
+  <div class="sec">
+    <h2 class="gold">Detalles para el viaje</h2>
+    <div class="grid">
+      <div class="box"><h3>Alojamiento</h3><p>[Hotel 1 · Hotel 2 · Hotel 3]. Septiembre es temporada alta: reservad con tiempo.</p></div>
+      <div class="box"><h3>Cómo llegar</h3><p>[En tren, en coche, aparcamiento y transporte entre la iglesia y el Parador.]</p></div>
+      <div class="box"><h3>Obsequios</h3><p>Vuestra presencia es el mejor regalo. Si queréis tener un detalle, [número de cuenta o lista].</p></div>
+      <div class="box"><h3>Niños</h3><p>[Podréis traerlos / Celebración sin niños].</p></div>
+    </div>
+    <div style="margin-top:34px">
+      <details><summary>¿Hasta cuándo puedo confirmar?</summary><p>Hasta el [fecha límite].</p></details>
+      <details><summary>¿Hay menú para alergias o dietas especiales?</summary><p>Sí. Indicadlo en el formulario de abajo.</p></details>
+      <details><summary>¿Puedo llevar acompañante?</summary><p>[Indicado en vuestra invitación].</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rsvp">
+  <svg class="div" aria-hidden="true"><use href="#s-div"/></svg>
+  <h2 class="gold">Lista de invitados</h2>
+  <p style="margin:0;font-style:italic">Confirmad antes del [fecha límite] y vuestro nombre estará en la puerta</p>
+  <label class="fld">Nombre y apellidos<input id="nombre" autocomplete="name"></label>
+  <label class="fld">Respuesta<select id="asiste"><option>Allí estaré, copa en mano</option><option>No podré asistir</option></select></label>
+  <label class="fld">Acompañantes<input id="num" type="number" min="0" max="10" value="0" inputmode="numeric"></label>
+  <label class="fld">Alergias o menú especial<textarea id="menu" rows="2"></textarea></label>
+  <label class="fld">La canción que os hará saltar a la pista<input id="cancion"></label>
+  <button class="btn" id="enviar" type="button">Confirmar mi entrada</button>
+  <p class="ok" id="ok">¡Gracias! Os esperamos en la pista.</p>
+</section>
+
+<footer>
+  <svg class="tower" aria-hidden="true"><use href="#s-tower"/></svg>
+  <p class="ltd gold" style="font-size:26px;margin:0">Javier & Alicia</p>
+  <p class="tiny" style="margin:8px 0 0">4 · IX · 2027 · Cuenca</p>
+  <p style="font-style:italic;margin:14px 0 0;color:var(--dim)">Nos vemos en la pista</p>
+</footer>
+
+<script>
+(function(){
+  var target=new Date(2027,8,4,12,0,0).getTime();
+  var d=document.getElementById('d'),h=document.getElementById('h'),m=document.getElementById('m'),sg=document.getElementById('s');
+  function tick(){var s=Math.floor(Math.max(0,target-Date.now())/1000);
+    d.textContent=Math.floor(s/86400);h.textContent=Math.floor(s%86400/3600);m.textContent=Math.floor(s%3600/60);sg.textContent=s%60}
+  tick();setInterval(tick,1000);
+  document.getElementById('enviar').addEventListener('click',function(){
+    var n=document.getElementById('nombre').value.trim();
+    if(!n){document.getElementById('nombre').focus();return}
+    var b='Nombre: '+n+'\nRespuesta: '+document.getElementById('asiste').value+'\nAcompañantes: '+document.getElementById('num').value+
+      '\nAlergias/menú: '+document.getElementById('menu').value+'\nCanción: '+document.getElementById('cancion').value;
+    document.getElementById('ok').style.display='block';
+    // Cambiar por el correo real de los novios
+    location.href='mailto:correo@ejemplo.com?subject='+encodeURIComponent('Boda Javier y Alicia – '+n)+'&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>
